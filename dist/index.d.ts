@@ -41,6 +41,14 @@ export declare type Profile = {
     organizations?: DocumentReference<Organization>[];
 };
 /**
+ * Duchess/Steffi API
+ */
+export declare type SteffiWebsite = {
+    name: string;
+    members: Profile[];
+    cats?: Cat[];
+};
+/**
  * Utils
  */
 export declare const converter: <T>() => FirestoreDataConverter<T>;

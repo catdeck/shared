@@ -83,6 +83,16 @@ export type Profile = {
 };
 
 /**
+ * Duchess/Steffi API
+ */
+
+export type SteffiWebsite = {
+  name: string;
+  members: Profile[];
+  cats?: Cat[];
+};
+
+/**
  * Utils
  */
 
