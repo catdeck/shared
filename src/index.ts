@@ -1,6 +1,6 @@
 import {
+  // Timestamp,
   DocumentReference,
-  Timestamp,
   FirestoreDataConverter,
   WithFieldValue,
   DocumentData,
@@ -9,7 +9,6 @@ import {
   collection,
   Firestore,
 } from "firebase/firestore";
-import { useMemo } from "react";
 
 /**
  * Collection names + type mapping
@@ -99,15 +98,6 @@ export const getCollection = <CollectionName extends CollectionNames>(
 ) =>
   collection(firestore, collectionName).withConverter(
     converter<CollectionTypes[CollectionName]>()
-  );
-
-export const useGetCollection = <CollectionName extends CollectionNames>(
-  firestore: Firestore,
-  collectionName: CollectionName
-) =>
-  useMemo(
-    () => getCollection(firestore, collectionName),
-    [collectionName, firestore]
   );
 
 export type ExtractDocumentReferenceType<D> = D extends DocumentReference<

@@ -6,5 +6,5 @@
     "composite": true,
     "outDir": "dist"
   },
-  "files": ["src/index.ts"]
+  "files": ["src/index.ts", "src/react.ts"]
 }
