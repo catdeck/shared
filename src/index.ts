@@ -93,15 +93,20 @@ export const converter = <T>(): FirestoreDataConverter<T> => ({
     snap.data(options) as T,
 });
 
+export const getCollection = <CollectionName extends CollectionNames>(
+  firestore: Firestore,
+  collectionName: CollectionName
+) =>
+  collection(firestore, collectionName).withConverter(
+    converter<CollectionTypes[CollectionName]>()
+  );
+
 export const useGetCollection = <CollectionName extends CollectionNames>(
   firestore: Firestore,
   collectionName: CollectionName
 ) =>
   useMemo(
-    () =>
-      collection(firestore, collectionName).withConverter(
-        converter<CollectionTypes[CollectionName]>()
-      ),
+    () => getCollection(firestore, collectionName),
     [collectionName, firestore]
   );
 

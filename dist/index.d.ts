@@ -44,6 +44,7 @@ export declare type Profile = {
  * Utils
  */
 export declare const converter: <T>() => FirestoreDataConverter<T>;
+export declare const getCollection: <CollectionName extends CollectionNames>(firestore: Firestore, collectionName: CollectionName) => import("@firebase/firestore").CollectionReference<CollectionTypes[CollectionName]>;
 export declare const useGetCollection: <CollectionName extends CollectionNames>(firestore: Firestore, collectionName: CollectionName) => import("@firebase/firestore").CollectionReference<CollectionTypes[CollectionName]>;
 export declare type ExtractDocumentReferenceType<D> = D extends DocumentReference<infer T> ? T : never;
 //# sourceMappingURL=index.d.ts.map
