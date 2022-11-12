@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "rootDir": "src",
+    "composite": true,
+    "outDir": "dist"
+  },
+  "files": ["src/index.ts"]
+}
