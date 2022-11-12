@@ -87,9 +87,10 @@ export type Profile = {
  */
 
 export type SteffiWebsite = {
+  _id: string;
   name: string;
-  members: Profile[];
-  cats?: Cat[];
+  members: WithId<Profile>[];
+  cats: WithId<Cat>[];
 };
 
 /**
@@ -115,3 +116,5 @@ export type ExtractDocumentReferenceType<D> = D extends DocumentReference<
 >
   ? T
   : never;
+
+export type WithId<T> = T & { _id: string };

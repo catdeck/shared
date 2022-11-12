@@ -44,9 +44,10 @@ export declare type Profile = {
  * Duchess/Steffi API
  */
 export declare type SteffiWebsite = {
+    _id: string;
     name: string;
-    members: Profile[];
-    cats?: Cat[];
+    members: WithId<Profile>[];
+    cats: WithId<Cat>[];
 };
 /**
  * Utils
@@ -54,4 +55,7 @@ export declare type SteffiWebsite = {
 export declare const converter: <T>() => FirestoreDataConverter<T>;
 export declare const getCollection: <CollectionName extends CollectionNames>(firestore: Firestore, collectionName: CollectionName) => import("@firebase/firestore").CollectionReference<CollectionTypes[CollectionName]>;
 export declare type ExtractDocumentReferenceType<D> = D extends DocumentReference<infer T> ? T : never;
+export declare type WithId<T> = T & {
+    _id: string;
+};
 //# sourceMappingURL=index.d.ts.map
