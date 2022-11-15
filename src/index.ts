@@ -72,6 +72,7 @@ export type Cat = {
 // organization
 export type Organization = {
   name: string;
+  slug: string;
   members: DocumentReference<Profile>[];
   cats?: DocumentReference<Cat>[];
 };
