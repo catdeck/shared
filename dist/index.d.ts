@@ -33,6 +33,7 @@ export declare type Cat = {
 };
 export declare type Organization = {
     name: string;
+    slug: string;
     members: DocumentReference<Profile>[];
     cats?: DocumentReference<Cat>[];
 };
