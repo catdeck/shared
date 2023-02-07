@@ -30,6 +30,7 @@ export declare type Cat = {
     furPattern: CatFurPattern;
     furColors: CatFurColor[];
     organization: DocumentReference<Organization>;
+    images?: string[];
 };
 export declare type Organization = {
     name: string;

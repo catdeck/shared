@@ -67,6 +67,7 @@ export type Cat = {
   furPattern: CatFurPattern;
   furColors: CatFurColor[];
   organization: DocumentReference<Organization>;
+  images?: string[];
 };
 
 // organization
